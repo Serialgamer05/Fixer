@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --color-background: #FFFFFF; /* white */
+    --color-surface: #F8F9FA; /* gray-50 */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #1F2937; /* gray-800 */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #1F2937; /* gray-800 */
+    
+    /* Text Colors */
+    --color-foreground: #1F2937; /* gray-800 */
+    --color-muted: #F8F9FA; /* gray-50 */
+    --color-muted-foreground: #6B7280; /* gray-500 */
+    
+    /* Primary Colors */
+    --color-primary: #0078D4; /* blue-600 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    --color-accent: #0066B2; /* blue-700 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #6B7280; /* gray-500 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* State Colors */
+    --color-success: #10B981; /* emerald-500 */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #F59E0B; /* amber-500 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    --color-error: #EF4444; /* red-500 */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #EF4444; /* red-500 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Border and Input Colors */
+    --color-border: rgba(0, 0, 0, 0.1); /* black with 10% opacity */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #0078D4; /* blue-600 */
+    
+    /* Hover States */
+    --color-hover-light: #F6F6F6; /* gray-100 */
+    --color-hover-medium: #EEEEEE; /* gray-200 */
+    
+    /* Shadow Colors */
+    --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.2);
+    
+    /* Border Radius */
+    --radius: 8px;
+  }
+
+  .dark {
+    /* Background Colors */
+    --color-background: #1F2937; /* gray-800 */
+    --color-surface: #374151; /* gray-700 */
+    --color-card: #374151; /* gray-700 */
+    --color-card-foreground: #F9FAFB; /* gray-50 */
+    --color-popover: #374151; /* gray-700 */
+    --color-popover-foreground: #F9FAFB; /* gray-50 */
+    
+    /* Text Colors */
+    --color-foreground: #F9FAFB; /* gray-50 */
+    --color-muted: #4B5563; /* gray-600 */
+    --color-muted-foreground: #9CA3AF; /* gray-400 */
+    
+    /* Primary Colors */
+    --color-primary: #0078D4; /* blue-600 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    --color-accent: #0066B2; /* blue-700 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #6B7280; /* gray-500 */
+    --color-secondary-foreground: #F9FAFB; /* gray-50 */
+    
+    /* State Colors */
+    --color-success: #10B981; /* emerald-500 */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #F59E0B; /* amber-500 */
+    --color-warning-foreground: #1F2937; /* gray-800 */
+    --color-error: #EF4444; /* red-500 */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #EF4444; /* red-500 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Border and Input Colors */
+    --color-border: rgba(255, 255, 255, 0.1); /* white with 10% opacity */
+    --color-input: #374151; /* gray-700 */
+    --color-ring: #0078D4; /* blue-600 */
+    
+    /* Hover States */
+    --color-hover-light: #4B5563; /* gray-600 */
+    --color-hover-medium: #6B7280; /* gray-500 */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+::-webkit-scrollbar-thumb  {
+    @apply rounded-md;
+  }
+::-webkit-scrollbar-thumb:hover  {
+    
+  }
+
+  /* Focus styles */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  /* Animation utilities */
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+
+  /* Backdrop blur utility */
+  .backdrop-blur-subtle {
+    backdrop-filter: blur(8px);
+  }
+}
